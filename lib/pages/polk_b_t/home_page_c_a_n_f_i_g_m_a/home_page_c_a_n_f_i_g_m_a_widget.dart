@@ -569,7 +569,7 @@ class _HomePageCANFIGMAWidgetState extends State<HomePageCANFIGMAWidget>
                                                                           child:
                                                                               LinearPercentIndicator(
                                                                             percent:
-                                                                                0.5,
+                                                                                0.7,
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 0.3,
                                                                             lineHeight:

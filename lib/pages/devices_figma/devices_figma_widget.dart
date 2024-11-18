@@ -301,8 +301,17 @@ class _DevicesFigmaWidgetState extends State<DevicesFigmaWidget> {
                                     FlutterFlowTheme.of(context).polkBrickRed,
                                 size: 20.0,
                               ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
+                              onPressed: () async {
+                                context.pushNamed(
+                                  'speaker_details',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.topToBottom,
+                                    ),
+                                  },
+                                );
                               },
                             ),
                           ),

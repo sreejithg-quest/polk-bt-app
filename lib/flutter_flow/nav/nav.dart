@@ -156,6 +156,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'PartySetup',
           path: '/partySetup',
           builder: (context, params) => const PartySetupWidget(),
+        ),
+        FFRoute(
+          name: 'speaker_details',
+          path: '/speakerDetails',
+          builder: (context, params) => const SpeakerDetailsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
