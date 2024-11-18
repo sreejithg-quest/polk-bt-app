@@ -8,3 +8,6 @@ export 'disconnect_device.dart' show disconnectDevice;
 export 'get_rssi.dart' show getRssi;
 export 'send_data.dart' show sendData;
 export 'receive_data.dart' show receiveData;
+export 'display_status.dart' show displayStatus;
+export 'battery_display_status_o_n.dart' show batteryDisplayStatusON;
+export 'battery_display_status_o_f_f.dart' show batteryDisplayStatusOFF;

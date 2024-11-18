@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -630,6 +631,11 @@ class _SpeakerDetailsWidgetState extends State<SpeakerDetailsWidget>
                                                           safeSetState(() =>
                                                               _model.switchValue1 =
                                                                   newValue);
+
+                                                          if (!newValue) {
+                                                            await actions
+                                                                .batteryDisplayStatusOFF();
+                                                          }
                                                         },
                                                         activeColor:
                                                             FlutterFlowTheme.of(
