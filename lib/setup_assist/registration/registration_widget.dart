@@ -101,6 +101,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
+                                    color: const Color(0xFF0E0F0F),
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w200,

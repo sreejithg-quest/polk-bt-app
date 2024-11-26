@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -12,7 +13,12 @@ import 'speaker_details_model.dart';
 export 'speaker_details_model.dart';
 
 class SpeakerDetailsWidget extends StatefulWidget {
-  const SpeakerDetailsWidget({super.key});
+  const SpeakerDetailsWidget({
+    super.key,
+    this.progressValue,
+  });
+
+  final String? progressValue;
 
   @override
   State<SpeakerDetailsWidget> createState() => _SpeakerDetailsWidgetState();
@@ -279,7 +285,7 @@ class _SpeakerDetailsWidgetState extends State<SpeakerDetailsWidget>
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 16.0,
-                                  letterSpacing: 0.0,
+                                  letterSpacing: 9.0,
                                 ),
                           ),
                           InkWell(
@@ -341,7 +347,7 @@ class _SpeakerDetailsWidgetState extends State<SpeakerDetailsWidget>
                           Container(
                             decoration: const BoxDecoration(),
                             child: LinearPercentIndicator(
-                              percent: 0.7,
+                              percent: random_data.randomDouble(0.1, 1.0),
                               width: MediaQuery.sizeOf(context).width * 0.3,
                               lineHeight: 7.0,
                               animation: true,
@@ -362,7 +368,7 @@ class _SpeakerDetailsWidgetState extends State<SpeakerDetailsWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              '50%',
+                              random_data.randomInteger(0, 10).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
@@ -631,16 +637,30 @@ class _SpeakerDetailsWidgetState extends State<SpeakerDetailsWidget>
                                                           safeSetState(() =>
                                                               _model.switchValue1 =
                                                                   newValue);
-
-                                                          if (!newValue) {
+                                                          if (newValue) {
                                                             await actions
-                                                                .batteryDisplayStatusOFF();
+                                                                .batteryDisplayStatusOFF(
+                                                              context,
+                                                              _model
+                                                                  .switchValue1
+                                                                  ?.toString(),
+                                                              'battery',
+                                                            );
+                                                          } else {
+                                                            await actions
+                                                                .batteryDisplayStatusOFF(
+                                                              context,
+                                                              _model
+                                                                  .switchValue1
+                                                                  ?.toString(),
+                                                              'battery',
+                                                            );
                                                           }
                                                         },
                                                         activeColor:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .success,
+                                                                .secondaryBackground,
                                                         activeTrackColor:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -799,11 +819,28 @@ class _SpeakerDetailsWidgetState extends State<SpeakerDetailsWidget>
                                                     safeSetState(() =>
                                                         _model.switchValue2 =
                                                             newValue);
+                                                    if (newValue) {
+                                                      await actions
+                                                          .batteryDisplayStatusOFF(
+                                                        context,
+                                                        _model.switchValue2
+                                                            ?.toString(),
+                                                        'feedback',
+                                                      );
+                                                    } else {
+                                                      await actions
+                                                          .batteryDisplayStatusOFF(
+                                                        context,
+                                                        _model.switchValue2
+                                                            ?.toString(),
+                                                        'feedback',
+                                                      );
+                                                    }
                                                   },
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .success,
+                                                          .secondaryBackground,
                                                   activeTrackColor:
                                                       FlutterFlowTheme.of(
                                                               context)

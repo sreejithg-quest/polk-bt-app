@@ -9,9 +9,27 @@ import 'package:flutter/material.dart';
 
 import 'package:fluttertoast/fluttertoast.dart';
 
-Future batteryDisplayStatusOFF() async {
+Future batteryDisplayStatusOFF(
+    BuildContext context, String? strWidget, String? widgetCode) async {
+  String strMsg = "";
+  if (widgetCode.toString() == 'battery') {
+    if (strWidget.toString() == 'false')
+      strMsg = "BATTERY SAVER DISABLED";
+    else
+      strMsg = "BATTERY SAVER ENABLED";
+  } else if (widgetCode.toString() == 'feedback') {
+    if (strWidget.toString() == 'false')
+      strMsg = "FEEDBAK SOUNDS DISABLED";
+    else
+      strMsg = "FEEDBAK SOUNDS ENABLED";
+  }
+
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Text(strMsg),
+  ));
+
   Fluttertoast.showToast(
-      msg: "BATTERY SAVER DISABLED",
+      msg: strMsg,
       toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,

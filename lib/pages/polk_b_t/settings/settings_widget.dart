@@ -42,7 +42,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFFF9F9F9),
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? Colors.white
+            : Colors.black,
         body: SafeArea(
           top: true,
           child: Align(

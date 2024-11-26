@@ -20,7 +20,7 @@ export '/setup_assist/registration/registration_widget.dart'
 export '/setup_assist/update/update_widget.dart' show UpdateWidget;
 export '/setup_assist/finished/finished_widget.dart' show FinishedWidget;
 export '/pages/polk_b_t/settings/settings_widget.dart' show SettingsWidget;
-export '/pages/polk_b_t/home_page_c_a_n_f_i_g_m_a/home_page_c_a_n_f_i_g_m_a_widget.dart'
+export '/pages/home_page_c_a_n_f_i_g_m_a/home_page_c_a_n_f_i_g_m_a_widget.dart'
     show HomePageCANFIGMAWidget;
 export '/pages/polk_b_t/party_setup/party_setup_widget.dart'
     show PartySetupWidget;

@@ -258,7 +258,9 @@ class _HomePageCANFIGMAWidgetState extends State<HomePageCANFIGMAWidget>
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFFF9F9F9),
+        backgroundColor: Theme.of(context).brightness == Brightness.light
+            ? const Color(0xFFF9F9F9)
+            : FlutterFlowTheme.of(context).secondaryText,
         body: SafeArea(
           top: true,
           child: Column(
@@ -1074,6 +1076,67 @@ class _HomePageCANFIGMAWidgetState extends State<HomePageCANFIGMAWidget>
                                                                 ).animateOnPageLoad(
                                                                     animationsMap[
                                                                         'textOnPageLoadAnimation2']!),
+                                                                Align(
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                          1.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Builder(
+                                                                    builder:
+                                                                        (context) =>
+                                                                            Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          await showDialog(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (dialogContext) {
+                                                                              return Dialog(
+                                                                                elevation: 0,
+                                                                                insetPadding: EdgeInsets.zero,
+                                                                                backgroundColor: Colors.transparent,
+                                                                                alignment: const AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
+                                                                                child: GestureDetector(
+                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                  child: SizedBox(
+                                                                                    width: MediaQuery.sizeOf(context).width * 1.0,
+                                                                                    child: const BatteryInfoSheetWidget(),
+                                                                                  ),
+                                                                                ),
+                                                                              );
+                                                                            },
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .info_outline,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                          size:
+                                                                              20.0,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
                                                                 Transform.scale(
                                                                   scaleX: 0.75,
                                                                   scaleY: 0.7,

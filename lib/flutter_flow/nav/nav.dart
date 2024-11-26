@@ -160,7 +160,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'speaker_details',
           path: '/speakerDetails',
-          builder: (context, params) => const SpeakerDetailsWidget(),
+          builder: (context, params) => SpeakerDetailsWidget(
+            progressValue: params.getParam(
+              'progressValue',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
