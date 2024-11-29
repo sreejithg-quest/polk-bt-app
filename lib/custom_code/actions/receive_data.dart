@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 Future<String?> receiveData(BTDeviceStruct deviceInfo) async {
-  final device = BluetoothDevice.fromId(deviceInfo.id, name: deviceInfo.name);
+  final device = BluetoothDevice.fromId(deviceInfo.id);
   final services = await device.discoverServices();
   for (BluetoothService service in services) {
     for (BluetoothCharacteristic characteristic in service.characteristics) {

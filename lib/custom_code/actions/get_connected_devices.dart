@@ -12,8 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 Future<List<BTDeviceStruct>> getConnectedDevices() async {
-  final flutterBlue = FlutterBluePlus.instance;
-  final connectedDevices = await flutterBlue.connectedDevices;
+  final connectedDevices = await FlutterBluePlus.connectedDevices;
   List<BTDeviceStruct> devices = [];
   for (int i = 0; i < connectedDevices.length; i++) {
     final deviceResult = connectedDevices[i];
