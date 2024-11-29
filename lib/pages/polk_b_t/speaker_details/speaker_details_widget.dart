@@ -282,10 +282,9 @@ class _SpeakerDetailsWidgetState extends State<SpeakerDetailsWidget>
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  fontSize: 16.0,
-                                  letterSpacing: 9.0,
+                                  color: const Color(0xFFC5321A),
+                                  fontSize: 20.0,
+                                  letterSpacing: 10.0,
                                 ),
                           ),
                           InkWell(
