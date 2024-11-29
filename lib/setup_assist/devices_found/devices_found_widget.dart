@@ -98,7 +98,7 @@ class _DevicesFoundWidgetState extends State<DevicesFoundWidget> {
                             children: [
                               Container(
                                 width: 350.0,
-                                height: 538.0,
+                                height: 400.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -106,9 +106,9 @@ class _DevicesFoundWidgetState extends State<DevicesFoundWidget> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.asset(
-                                    'assets/images/Screenshot_2024-01-09_at_11.11.17_AM.png',
-                                    width: 200.0,
-                                    height: 268.0,
+                                    'assets/images/flask_render.png',
+                                    width: 100.0,
+                                    height: 176.0,
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -118,6 +118,35 @@ class _DevicesFoundWidgetState extends State<DevicesFoundWidget> {
                         ],
                       ),
                     ),
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 392.0,
+                        height: 118.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Text(
+                          'Polk Flask',
+                          textAlign: TextAlign.center,
+                          style: FlutterFlowTheme.of(context)
+                              .headlineMedium
+                              .override(
+                                fontFamily: 'Outfit',
+                                letterSpacing: 0.0,
+                              ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -156,6 +185,7 @@ class _DevicesFoundWidgetState extends State<DevicesFoundWidget> {
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(

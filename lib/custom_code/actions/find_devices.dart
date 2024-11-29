@@ -12,9 +12,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 Future<List<BTDeviceStruct>> findDevices() async {
-  final flutterBlue = FlutterBluePlus.instance;
   List<BTDeviceStruct> devices = [];
-  flutterBlue.scanResults.listen((results) {
+  FlutterBluePlus.scanResults.listen((results) {
     List<ScanResult> scannedDevices = [];
     for (ScanResult r in results) {
       if (r.device.name.isNotEmpty) {
@@ -31,9 +30,9 @@ Future<List<BTDeviceStruct>> findDevices() async {
       ));
     });
   });
-  final isScanning = flutterBlue.isScanningNow;
+  final isScanning = FlutterBluePlus.isScanningNow;
   if (!isScanning) {
-    await flutterBlue.startScan(
+     FlutterBluePlus.startScan(
       timeout: const Duration(seconds: 5),
     );
   }

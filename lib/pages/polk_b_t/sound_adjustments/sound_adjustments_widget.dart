@@ -107,8 +107,10 @@ class _SoundAdjustmentsWidgetState extends State<SoundAdjustmentsWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Readex Pro',
+                                    color: const Color(0xFF1795F4),
                                     fontSize: 22.0,
                                     letterSpacing: 0.0,
+                                    fontStyle: FontStyle.italic,
                                   ),
                         ),
                       ),

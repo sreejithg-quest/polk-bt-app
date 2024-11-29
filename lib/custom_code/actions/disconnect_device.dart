@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 Future disconnectDevice(BTDeviceStruct deviceInfo) async {
-  final device = BluetoothDevice.fromId(deviceInfo.id, name: deviceInfo.name);
+  final device = BluetoothDevice.fromId(deviceInfo.id);
   try {
     await device.disconnect();
   } catch (e) {
